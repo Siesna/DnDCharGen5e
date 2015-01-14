@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  strength: 
+  dexterity: 
+  constitution: 
+  intelligent: 
+  wisdom: 
+  charisma: 
+  str_mod: 
+  dex_mod: 
+  con_mod: 
+  int_mod: 
+  wis_mod: 
+  cha_mod: 
+  str_saving_throw: 
+  dex_saving_throw: 
+  con_saving_throw: 
+  int_saving_throw: 
+  wis_saving_throw: 
+  cha_saving_throw: 
+  character_id: 
+
+two:
+  strength: 
+  dexterity: 
+  constitution: 
+  intelligent: 
+  wisdom: 
+  charisma: 
+  str_mod: 
+  dex_mod: 
+  con_mod: 
+  int_mod: 
+  wis_mod: 
+  cha_mod: 
+  str_saving_throw: 
+  dex_saving_throw: 
+  con_saving_throw: 
+  int_saving_throw: 
+  wis_saving_throw: 
+  cha_saving_throw: 
+  character_id: 

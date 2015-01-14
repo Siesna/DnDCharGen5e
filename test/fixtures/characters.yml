@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  race: MyString
+  class: MyString
+  background: MyString
+  alignment: MyString
+  experience: 
+  level: 
+  speed: 
+  proficiency_bonus: 
+  max_hp: 
+  armor_class: 
+  hit_die: MyString
+  total_hit_die: 
+  languages: MyString
+
+two:
+  name: MyString
+  race: MyString
+  class: MyString
+  background: MyString
+  alignment: MyString
+  experience: 
+  level: 
+  speed: 
+  proficiency_bonus: 
+  max_hp: 
+  armor_class: 
+  hit_die: MyString
+  total_hit_die: 
+  languages: MyString
