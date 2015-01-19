@@ -25,14 +25,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'autoprefixer-rails', '~> 4.0.2.2'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
 group :development do
   gem 'quiet_assets'
+  gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'xray-rails'
   gem 'thin'
+  gem 'better_errors'
 end
 
 # Use ActiveModel has_secure_password
