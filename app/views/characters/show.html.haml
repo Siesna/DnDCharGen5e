@@ -1,4 +1,51 @@
 %p#notice= notice
+
+%p
+  %b Name:
+  = @character.name
+%p
+  %b Race:
+  = @character.race
+%p
+  %b Character class:
+  = @character.character_class
+%p
+  %b Background:
+  = @character.background
+%p
+  %b Alignment:
+  = @character.alignment
+%p
+  %b Experience:
+  = @character.experience
+%p
+  %b Level:
+  = @character.level
+%p
+  %b Speed:
+  = @character.speed
+%p
+  %b Proficiency bonus:
+  = @character.proficiency_bonus
+%p
+  %b Max hp:
+  = @character.max_hp
+%p
+  %b Max hp:
+  = @character.max_hp
+%p
+  %b Armor class:
+  = @character.armor_class
+%p
+  %b Hit die:
+  = @character.hit_die
+%p
+  %b Total hit die:
+  = @character.total_hit_die
+%p
+  %b Languages:
+  = @character.languages
+
 = link_to 'Edit', edit_character_path(@character)
-|
-\#{link_to 'Back', characters_path}
+\|
+= link_to 'Back', characters_path

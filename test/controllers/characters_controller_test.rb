@@ -18,7 +18,7 @@ class CharactersControllerTest < ActionController::TestCase
 
   test "should create character" do
     assert_difference('Character.count') do
-      post :create, character: {  }
+      post :create, character: { alignment: @character.alignment, armor_class: @character.armor_class, background: @character.background, character_class: @character.character_class, experience: @character.experience, hit_die: @character.hit_die, languages: @character.languages, level: @character.level, max_hp: @character.max_hp, max_hp: @character.max_hp, name: @character.name, proficiency_bonus: @character.proficiency_bonus, race: @character.race, speed: @character.speed, total_hit_die: @character.total_hit_die }
     end
 
     assert_redirected_to character_path(assigns(:character))
@@ -35,7 +35,7 @@ class CharactersControllerTest < ActionController::TestCase
   end
 
   test "should update character" do
-    patch :update, id: @character, character: {  }
+    patch :update, id: @character, character: { alignment: @character.alignment, armor_class: @character.armor_class, background: @character.background, character_class: @character.character_class, experience: @character.experience, hit_die: @character.hit_die, languages: @character.languages, level: @character.level, max_hp: @character.max_hp, max_hp: @character.max_hp, name: @character.name, proficiency_bonus: @character.proficiency_bonus, race: @character.race, speed: @character.speed, total_hit_die: @character.total_hit_die }
     assert_redirected_to character_path(assigns(:character))
   end
 

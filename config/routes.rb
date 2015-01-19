@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :meats
+
   authenticated :user do
     root :to => 'characters#index', :as => :authenticated_root
   end
@@ -6,8 +8,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   # You can have the root of your site routed with "root"
-  resources :characters
-  # root 'welcome#index'
-  # root to: 'visitors#index'
+  resources :characters  # root 'welcome#index'  # root to: 'visitors#index'
 
 end
