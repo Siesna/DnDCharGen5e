@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
   authenticated :user do
     root :to => 'characters#index', :as => :authenticated_root
   end
