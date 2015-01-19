@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119050928) do
+ActiveRecord::Schema.define(version: 20150119061214) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150119050928) do
   create_table "characters", force: true do |t|
     t.string   "name"
     t.string   "race"
-    t.string   "class"
+    t.string   "character_class"
     t.string   "background"
     t.string   "alignment"
     t.integer  "experience"
@@ -51,8 +51,7 @@ ActiveRecord::Schema.define(version: 20150119050928) do
   end
 
   create_table "meats", force: true do |t|
-    t.text     "flavor"
-    t.integer  "dragon"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

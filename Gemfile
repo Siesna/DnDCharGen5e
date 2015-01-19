@@ -29,6 +29,8 @@ gem 'bootswatch-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails', '~> 4.0.2.2'
 gem 'haml-rails'
+gem 'activerecord', '>= 3.2.0', :require => "active_record"
+
 
 group :development do
   gem 'quiet_assets'
