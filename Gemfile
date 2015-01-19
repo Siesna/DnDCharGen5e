@@ -37,6 +37,7 @@ group :development do
   gem 'xray-rails'
   gem 'thin'
   gem 'better_errors'
+  # gem 'html2haml'
 end
 
 # Use ActiveModel has_secure_password
