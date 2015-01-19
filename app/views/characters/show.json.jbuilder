@@ -1,1 +1,1 @@
-json.extract! @character, :id, :created_at, :updated_at
+json.extract! @character, :id, :name, :race, :character_class, :background, :alignment, :experience, :level, :speed, :proficiency_bonus, :max_hp, :max_hp, :armor_class, :hit_die, :total_hit_die, :languages, :created_at, :updated_at

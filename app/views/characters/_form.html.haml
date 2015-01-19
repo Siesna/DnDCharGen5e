@@ -6,5 +6,47 @@
         - @character.errors.full_messages.each do |msg|
           %li= msg
 
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :race
+    = f.text_field :race
+  .field
+    = f.label :character_class, "Class"
+    = f.text_field :character_class
+  .field
+    = f.label :background
+    = f.text_field :background
+  .field
+    = f.label :alignment
+    = f.text_field :alignment
+  .field
+    = f.label :experience
+    = f.number_field :experience
+  .field
+    = f.label :level
+    = f.number_field :level
+  .field
+    = f.label :speed
+    = f.number_field :speed
+  .field
+    = f.label :proficiency_bonus
+    = f.number_field :proficiency_bonus
+  .field
+    = f.label :max_hp
+    = f.number_field :max_hp
+  .field
+    = f.label :armor_class
+    = f.number_field :armor_class
+  .field
+    = f.label :hit_die
+    = f.text_field :hit_die
+  .field
+    = f.label :total_hit_die
+    = f.number_field :total_hit_die
+  .field
+    = f.label :languages
+    = f.text_field :languages
   .actions
     = f.submit 'Save'

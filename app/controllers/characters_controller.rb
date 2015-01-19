@@ -4,7 +4,7 @@ class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all
+    @characters = Character.where(:user => current_user)
   end
 
   # GET /characters/1
@@ -69,6 +69,6 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params[:character]
+      params.require(:character).permit(:name, :race, :character_class, :background, :alignment, :experience, :level, :speed, :proficiency_bonus, :max_hp, :max_hp, :armor_class, :hit_die, :total_hit_die, :languages)
     end
 end
