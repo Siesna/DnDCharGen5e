@@ -28,10 +28,10 @@ gem 'devise-bootstrap-views'
 gem 'bootswatch-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails', '~> 4.0.2.2'
-gem 'haml'
+gem 'haml-rails'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+# gem 'spring',        group: :development
 
 group :development do
   gem 'quiet_assets'
