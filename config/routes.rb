@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :skills
+
+  resources :saving_throws
+
+  resources :abilities
+
   resources :meats
 
   authenticated :user do

@@ -1,0 +1,70 @@
+= form_for @skill do |f|
+  - if @skill.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@skill.errors.count, "error")} prohibited this skill from being saved:"
+      %ul
+        - @skill.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :acrobatics
+    = f.number_field :acrobatics
+  .field
+    = f.label :animal_handling
+    = f.number_field :animal_handling
+  .field
+    = f.label :arcana
+    = f.number_field :arcana
+  .field
+    = f.label :athletics
+    = f.number_field :athletics
+  .field
+    = f.label :deception
+    = f.number_field :deception
+  .field
+    = f.label :history
+    = f.number_field :history
+  .field
+    = f.label :insight
+    = f.number_field :insight
+  .field
+    = f.label :intimidation
+    = f.number_field :intimidation
+  .field
+    = f.label :investigation
+    = f.number_field :investigation
+  .field
+    = f.label :medicine
+    = f.number_field :medicine
+  .field
+    = f.label :nature
+    = f.number_field :nature
+  .field
+    = f.label :perception
+    = f.number_field :perception
+  .field
+    = f.label :perception
+    = f.number_field :perception
+  .field
+    = f.label :performance
+    = f.number_field :performance
+  .field
+    = f.label :persuasion
+    = f.number_field :persuasion
+  .field
+    = f.label :religion
+    = f.number_field :religion
+  .field
+    = f.label :sleight_of_hand
+    = f.number_field :sleight_of_hand
+  .field
+    = f.label :stealth
+    = f.number_field :stealth
+  .field
+    = f.label :survival
+    = f.number_field :survival
+  .field
+    = f.label :ability
+    = f.text_field :ability
+  .actions
+    = f.submit 'Save'

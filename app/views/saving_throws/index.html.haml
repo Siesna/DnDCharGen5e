@@ -1,0 +1,33 @@
+%h1 Listing saving_throws
+
+%table
+  %thead
+    %tr
+      %th Strength
+      %th Dexterity
+      %th Constitution
+      %th Intelligence
+      %th Wisdom
+      %th Charisma
+      %th Ability
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @saving_throws.each do |saving_throw|
+      %tr
+        %td= saving_throw.strength
+        %td= saving_throw.dexterity
+        %td= saving_throw.constitution
+        %td= saving_throw.intelligence
+        %td= saving_throw.wisdom
+        %td= saving_throw.charisma
+        %td= saving_throw.ability
+        %td= link_to 'Show', saving_throw
+        %td= link_to 'Edit', edit_saving_throw_path(saving_throw)
+        %td= link_to 'Destroy', saving_throw, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Saving throw', new_saving_throw_path
