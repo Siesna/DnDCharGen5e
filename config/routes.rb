@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   authenticated :user do
-    root :to => 'home#index', :as => :authenticated_root
+    root :to => 'characters#index', :as => :authenticated_root
   end
   root :to => redirect('/users/sign_in')
 
