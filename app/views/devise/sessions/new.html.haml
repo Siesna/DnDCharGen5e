@@ -2,9 +2,10 @@
 .col-sm-12.col-md-4
   .text-center
     =image_tag("d&d_logo.png")
-  .panel.panel-default
+  .panel.panel-danger
     .panel-heading
-      %h4= t('.sign_in', :default => "Sign in")
+      %h3.panel-title.text-center
+        Sign in to access the character creator
     .panel-body
       = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f|
         .form-group
