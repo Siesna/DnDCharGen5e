@@ -16,7 +16,7 @@
         %td= character.name
         %td.text-center= character.race
         %td.text-center= character.character_class
-        %td.text-right= link_to 'Show', character
+        %td.text-right= link_to 'View', character
         %td.text-right= link_to 'Edit', edit_character_path(character)
         %td.text-right= link_to 'Delete', character, :method => :delete, :data => { :confirm => 'Are you sure?' }
 

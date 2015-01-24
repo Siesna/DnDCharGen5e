@@ -6,26 +6,30 @@
         - @ability_modifier.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :strength
-    = f.number_field :strength
-  .field
-    = f.label :dexterity
-    = f.number_field :dexterity
-  .field
-    = f.label :constitution
-    = f.number_field :constitution
-  .field
-    = f.label :intelligence
-    = f.number_field :intelligence
-  .field
-    = f.label :wisdom
-    = f.number_field :wisdom
-  .field
-    = f.label :charisma
-    = f.number_field :charisma
-  .field
-    = f.label :ability
-    = f.text_field :ability
+   
+    = am.label :strength, class: "col-md-2 control-label"
+    .col-md-2
+      = am.number_field :strength, "Str Mod", class: "col-md-2 control-label"
+   
+    = am.label :dexterity, class: "col-md-2 control-label"
+    .col-md-2
+      = am.number_field :dexterity, "Dex Mod", class: "col-md-2 control-label"
+   
+    = am.label :constitution, class: "col-md-2 control-label"
+    .col-md-2
+      = am.number_field :constitution, "Con Mod", class: "col-md-2 control-label"
+   
+    = am.label :intelligence, class: "col-md-2 control-label"
+    .col-md-2
+      = am.number_field :intelligence, "Int Mod", class: "col-md-2 control-label"
+   
+    = am.label :wisdom, class: "col-md-2 control-label"
+    .col-md-2
+      = am.number_field :wisdom, "Wis Mod", class: "col-md-2 control-label"
+   
+    = am.label :charisma, class: "col-md-2 control-label"
+    .col-md-2
+      = am.number_field :charisma, "Cha Mod", class: "col-md-2 control-label"
+   
   .actions
-    = f.submit 'Save'
+    = am.submit 'Save'

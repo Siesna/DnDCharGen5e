@@ -17,6 +17,7 @@ class CharactersController < ApplicationController
     @character = Character.new
     @character.build_ability
     @character.ability.build_saving_throw
+    @character.ability.build_ability_modifier
   end
 
   # GET /characters/1/edit
@@ -24,6 +25,7 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character.build_ability if @character.ability.nil?
     @character.ability.build_saving_throw if @character.ability.saving_throw.nil?
+    @character.ability.build_ability_modifier if @character.ability.ability_modifier.nil?
   end
 
   # POST /characters
