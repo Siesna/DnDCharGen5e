@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ScoreTest < ActiveSupport::TestCase
+class AbilityModifierTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

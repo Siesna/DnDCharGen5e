@@ -8,10 +8,11 @@ class CreateSkills < ActiveRecord::Migration
       t.integer :deception
       t.integer :history
       t.integer :insight
-      t.integer :integerimidation
+      t.integer :intimidation
       t.integer :investigation
       t.integer :medicine
       t.integer :nature
+      t.integer :perception
       t.integer :perception
       t.integer :performance
       t.integer :persuasion
@@ -19,7 +20,7 @@ class CreateSkills < ActiveRecord::Migration
       t.integer :sleight_of_hand
       t.integer :stealth
       t.integer :survival
-      t.references :character, index: true
+      t.references :ability, index: true
 
       t.timestamps
     end

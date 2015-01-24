@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119064706) do
+ActiveRecord::Schema.define(version: 20150124221537) do
+
+  create_table "abilities", force: true do |t|
+    t.integer  "strength"
+    t.integer  "dexterity"
+    t.integer  "constitution"
+    t.integer  "intelligence"
+    t.integer  "wisdom"
+    t.integer  "charisma"
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "abilities", ["character_id"], name: "index_abilities_on_character_id"
+
+  create_table "ability_modifiers", force: true do |t|
+    t.integer  "strength"
+    t.integer  "dexterity"
+    t.integer  "constitution"
+    t.integer  "intelligence"
+    t.integer  "wisdom"
+    t.integer  "charisma"
+    t.integer  "ability_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ability_modifiers", ["ability_id"], name: "index_ability_modifiers_on_ability_id"
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -59,6 +87,20 @@ ActiveRecord::Schema.define(version: 20150119064706) do
     t.datetime "updated_at"
   end
 
+  create_table "saving_throws", force: true do |t|
+    t.integer  "strength"
+    t.integer  "dexterity"
+    t.integer  "constitution"
+    t.integer  "intelligence"
+    t.integer  "wisdom"
+    t.integer  "charisma"
+    t.integer  "ability_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "saving_throws", ["ability_id"], name: "index_saving_throws_on_ability_id"
+
   create_table "scores", force: true do |t|
     t.integer  "strength"
     t.integer  "dexterity"
@@ -93,7 +135,7 @@ ActiveRecord::Schema.define(version: 20150119064706) do
     t.integer  "deception"
     t.integer  "history"
     t.integer  "insight"
-    t.integer  "integerimidation"
+    t.integer  "intimidation"
     t.integer  "investigation"
     t.integer  "medicine"
     t.integer  "nature"
@@ -104,12 +146,12 @@ ActiveRecord::Schema.define(version: 20150119064706) do
     t.integer  "sleight_of_hand"
     t.integer  "stealth"
     t.integer  "survival"
-    t.integer  "character_id"
+    t.integer  "ability_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "skills", ["character_id"], name: "index_skills_on_character_id"
+  add_index "skills", ["ability_id"], name: "index_skills_on_ability_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

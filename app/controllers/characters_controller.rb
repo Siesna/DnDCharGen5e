@@ -15,17 +15,24 @@ class CharactersController < ApplicationController
   # GET /characters/new
   def new
     @character = Character.new
+    @character.build_ability
+    @character.ability.build_saving_throw
+    @character.ability.build_ability_modifier
   end
 
   # GET /characters/1/edit
   def edit
+    @character = Character.find(params[:id])
+    @character.build_ability if @character.ability.nil?
+    @character.ability.build_saving_throw if @character.ability.saving_throw.nil?
+    @character.ability.build_ability_modifier if @character.ability.ability_modifier.nil?
   end
 
   # POST /characters
   # POST /characters.json
   def create
     @character = Character.new(character_params)
-
+    @character.user = current_user
     respond_to do |format|
       if @character.save
         format.html { redirect_to @character, notice: 'Character was successfully created.' }
@@ -69,6 +76,12 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :race, :character_class, :background, :alignment, :experience, :level, :speed, :proficiency_bonus, :max_hp, :max_hp, :armor_class, :hit_die, :total_hit_die, :languages)
+      params.require(:character).permit(:name, :race, :character_class, :background, :alignment, 
+                    :experience, :level, :speed, :proficiency_bonus, :max_hp, :max_hp, :armor_class, 
+                    :hit_die, :total_hit_die, :languages, ability_attributes: [:id, :strength, :dexterity, 
+                    :constitution, :intelligence, :wisdom, :charisma, saving_throw_attributes: [:id, 
+                    :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma], 
+                    ability_modifier_attributes: [:id, :strength, :dexterity, :constitution, 
+                    :intelligence, :wisdom, :charisma]])
     end
 end

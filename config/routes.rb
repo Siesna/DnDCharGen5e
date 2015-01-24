@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :ability_modifiers
+
+  resources :skills
+
+  resources :saving_throws
+
+  resources :abilities
+
   resources :meats
 
   authenticated :user do
@@ -7,7 +15,5 @@ Rails.application.routes.draw do
   root :to => redirect('/users/sign_in')
 
   devise_for :users
-  # You can have the root of your site routed with "root"
-  resources :characters  # root 'welcome#index'  # root to: 'visitors#index'
-
+  resources :characters  
 end

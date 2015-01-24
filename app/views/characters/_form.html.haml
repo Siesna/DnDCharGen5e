@@ -1,52 +1,122 @@
-= form_for @character do |f|
+= form_for @character, :html => {:class => 'form-horizontal'} do |f|
   - if @character.errors.any?
     #error_explanation
       %h2= "#{pluralize(@character.errors.count, "error")} prohibited this character from being saved:"
       %ul
         - @character.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :race
-    = f.text_field :race
-  .field
-    = f.label :character_class, "Class"
-    = f.text_field :character_class
-  .field
-    = f.label :background
-    = f.text_field :background
-  .field
-    = f.label :alignment
-    = f.text_field :alignment
-  .field
-    = f.label :experience
-    = f.number_field :experience
-  .field
-    = f.label :level
-    = f.number_field :level
-  .field
-    = f.label :speed
-    = f.number_field :speed
-  .field
-    = f.label :proficiency_bonus
-    = f.number_field :proficiency_bonus
-  .field
-    = f.label :max_hp
-    = f.number_field :max_hp
-  .field
-    = f.label :armor_class
-    = f.number_field :armor_class
-  .field
-    = f.label :hit_die
-    = f.text_field :hit_die
-  .field
-    = f.label :total_hit_die
-    = f.number_field :total_hit_die
-  .field
-    = f.label :languages
-    = f.text_field :languages
-  .actions
-    = f.submit 'Save'
+  .form-group
+    = f.label :name, class: "col-md-2 control-label"
+    .col-md-10
+      = f.text_field :name, class: "form-control"
+  .form-group
+    = f.label :race, class: "col-md-2 control-label"
+    .col-md-4
+      = f.text_field :race, class: "form-control"
+    = f.label :character_class, "Class", class: "col-md-2 control-label"
+    .col-md-4
+      = f.text_field :character_class, class: "form-control"
+  .form-group
+    = f.label :background, class: "col-md-2 control-label"
+    .col-md-4
+      = f.text_field :background, class: "form-control"
+    = f.label :alignment, class: "col-md-2 control-label"
+    .col-md-4
+      = f.text_field :alignment, class: "form-control"
+  .form-group
+    = f.label :experience, class: "col-md-2 control-label"
+    .col-md-4
+      = f.number_field :experience, class: "form-control"
+    = f.label :level, class: "col-md-2 control-label"
+    .col-md-4
+      = f.number_field :level, class: "form-control"
+  .form-group
+    = f.label :speed, class: "col-md-2 control-label"
+    .col-md-4
+      = f.number_field :speed, class: "form-control"
+    = f.label :proficiency_bonus, "Proficiency Bonus", class: "col-md-2 control-label"
+    .col-md-4
+      = f.number_field :proficiency_bonus, class: "form-control"
+  .form-group
+    = f.label :max_hp, "Max HP", class: "col-md-2 control-label"
+    .col-md-4
+      = f.number_field :max_hp, class: "form-control"
+    = f.label :armor_class, "Armor Class", class: "col-md-2 control-label"
+    .col-md-4
+      = f.number_field :armor_class, class: "form-control"
+  .form-group
+    = f.label :hit_die, "Hit Die", class: "col-md-2 control-label"
+    .col-md-4
+      = f.text_field :hit_die, class: "form-control"
+    = f.label :total_hit_die, "Total Hit Die", class: "col-md-2 control-label"
+    .col-md-4
+      = f.number_field :total_hit_die, class: "form-control"
+  .form-group
+    = f.label :languages, class: "col-md-2 control-label"
+    .col-md-10
+      = f.text_field :languages, class: "form-control"
+  = f.fields_for :ability, @character.ability do |a|
+    =a.fields_for :saving_throw, @character.ability.saving_throw do |st|
+      =a.fields_for :ability_modifier, @character.ability.ability_modifier do |am|
+        .form-group.strength
+          = a.label :strength, class: "col-md-2 control-label"
+          .col-md-2
+            = a.number_field :strength, class: "form-control"
+          = am.label :strength, "Str Mod", class: "col-md-2 control-label"
+          .col-md-2
+            = am.number_field :strength, class: "form-control"
+          = st.label :strength, "Str Saving Throw", class: "col-md-2 control-label"
+          .col-md-2
+            = st.number_field :strength, class: "form-control"
+        .form-group.dexterity
+          = a.label :dexterity, class: "col-md-2 control-label"
+          .col-md-2
+            = a.number_field :dexterity, class: "form-control"
+          = am.label :dexterity, "Dex Mod", class: "col-md-2 control-label"
+          .col-md-2
+            = am.number_field :dexterity, class: "form-control"
+          = st.label :dexterity, "Dex Saving Throw", class: "col-md-2 control-label"
+          .col-md-2
+            = st.number_field :dexterity, class: "form-control"
+        .form-group.constitution
+          = a.label :constitution, class: "col-md-2 control-label"
+          .col-md-2
+            = a.number_field :constitution, class: "form-control"
+          = am.label :constitution, "Con Mod", class: "col-md-2 control-label"
+          .col-md-2
+            = am.number_field :constitution, class: "form-control"
+          = st.label :constitution, "Con Saving Throw", class: "col-md-2 control-label"
+          .col-md-2
+            = st.number_field :constitution, class: "form-control"
+        .form-group.intelligence
+          = a.label :intelligence, class: "col-md-2 control-label"
+          .col-md-2
+            = a.number_field :intelligence, class: "form-control"
+          = am.label :intelligence, "Int Mod", class: "col-md-2 control-label"
+          .col-md-2
+            = am.number_field :intelligence, class: "form-control"
+          = st.label :intelligence, "Int Saving Throw", class: "col-md-2 control-label"
+          .col-md-2
+            = st.number_field :intelligence, class: "form-control"
+        .form-group.wisdom
+          = a.label :wisdom, class: "col-md-2 control-label"
+          .col-md-2
+            = a.number_field :wisdom, class: "form-control"
+          = am.label :wisdom, "Wis Mod", class: "col-md-2 control-label"
+          .col-md-2
+            = am.number_field :wisdom, class: "form-control"
+          = st.label :wisdom, "Wis Saving Throw", class: "col-md-2 control-label"
+          .col-md-2
+            = st.number_field :wisdom, class: "form-control"
+        .form-group.charisma
+          = a.label :charisma, class: "col-md-2 control-label"
+          .col-md-2
+            = a.number_field :charisma, class: "form-control"
+          = am.label :charisma, "Cha Mod", class: "col-md-2 control-label"
+          .col-md-2
+            = am.number_field :charisma, class: "form-control"
+          = st.label :charisma, "Cha Saving Throw", class: "col-md-2 control-label"
+          .col-md-2
+            = st.number_field :charisma, class: "form-control"
+  .col-md-2
+    = f.submit 'Save', class: "btn btn-primary"

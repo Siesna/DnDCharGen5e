@@ -1,7 +1,11 @@
-%h1 Editing character
+.col-sm-12.col-md-1
+.col-sm-12.col-md-10  
+  .well.bs-component  
+    %legend 
+      Edit 
+      = @character.name
 
-= render 'form'
+    = render 'form'
 
-= link_to 'Show', @character
-\|
-= link_to 'Back', characters_path
+    = link_to 'View Character', @character, class: "btn btn-info"
+    = link_to 'Back', characters_path, class: "btn btn-info"
