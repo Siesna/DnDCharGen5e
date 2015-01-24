@@ -58,21 +58,27 @@
   = f.fields_for :ability, @character.ability do |a|
     .form-group
       = a.label :strength, class: "col-md-2 control-label"
-      = a.number_field :strength
+      .col-md-2
+        = a.number_field :strength, class: "form-control"
     .form-group
       = a.label :dexterity, class: "col-md-2 control-label"
-      = a.number_field :dexterity
+      .col-md-2
+        = a.number_field :dexterity, class: "form-control"
     .form-group
       = a.label :constitution, class: "col-md-2 control-label"
-      = a.number_field :constitution
+      .col-md-2
+        = a.number_field :constitution, class: "form-control"
     .form-group
       = a.label :intelligence, class: "col-md-2 control-label"
-      = a.number_field :intelligence
+      .col-md-2
+        = a.number_field :intelligence, class: "form-control"
     .form-group
       = a.label :wisdom, class: "col-md-2 control-label"
-      = a.number_field :wisdom
+      .col-md-2
+        = a.number_field :wisdom, class: "form-control"
     .form-group
       = a.label :charisma, class: "col-md-2 control-label"
-      = a.number_field :charisma
+      .col-md-2
+        = a.number_field :charisma, class: "form-control"
   .actions
     = f.submit 'Save', class: "btn btn-primary"
