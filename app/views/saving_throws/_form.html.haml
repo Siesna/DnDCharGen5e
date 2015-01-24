@@ -6,26 +6,33 @@
         - @saving_throw.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :strength
-    = f.number_field :strength
-  .field
-    = f.label :dexterity
-    = f.number_field :dexterity
-  .field
-    = f.label :constitution
-    = f.number_field :constitution
-  .field
-    = f.label :intelligence
-    = f.number_field :intelligence
-  .field
-    = f.label :wisdom
-    = f.number_field :wisdom
-  .field
-    = f.label :charisma
-    = f.number_field :charisma
-  .field
-    = f.label :ability
-    = f.text_field :ability
+  .form-group
+    = st.label :strength, class: "col-md-2 control-label"
+    .col-md-2
+      = st.number_field :strength, class: "form-control"
+  .form-group
+    = st.label :dexterity, class: "col-md-2 control-label"
+    .col-md-2
+      = st.number_field :dexterity
+  .form-group
+    = st.label :constitution, class: "col-md-2 control-label"
+    .col-md-2
+      = st.number_field :constitution
+  .form-group
+    = st.label :intelligence, class: "col-md-2 control-label"
+    .col-md-2
+      = st.number_field :intelligence
+  .form-group
+    = st.label :wisdom, class: "col-md-2 control-label"
+    .col-md-2
+      = st.number_field :wisdom
+  .form-group
+    = st.label :charisma, class: "col-md-2 control-label"
+    .col-md-2
+      = st.number_field :charisma
+  .form-group
+    = st.label :ability, class: "col-md-2 control-label"
+    .col-md-2
+      = st.text_field :ability
   .actions
-    = f.submit 'Save'
+    = st.submit 'Save'

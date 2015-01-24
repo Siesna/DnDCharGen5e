@@ -16,12 +16,14 @@ class CharactersController < ApplicationController
   def new
     @character = Character.new
     @character.build_ability
+    @character.ability.build_saving_throw
   end
 
   # GET /characters/1/edit
   def edit
     @character = Character.find(params[:id])
     @character.build_ability if @character.ability.nil?
+    @character.ability.build_saving_throw if @character.ability.saving_throw.nil?
   end
 
   # POST /characters
@@ -75,6 +77,7 @@ class CharactersController < ApplicationController
       params.require(:character).permit(:name, :race, :character_class, :background, :alignment, 
                     :experience, :level, :speed, :proficiency_bonus, :max_hp, :max_hp, :armor_class, 
                     :hit_die, :total_hit_die, :languages, ability_attributes: [:id, :strength, :dexterity, 
-                    :constitution, :intelligence, :wisdom, :charisma])
+                    :constitution, :intelligence, :wisdom, :charisma, saving_throw_attributes: [:id, 
+                    :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma]])
     end
 end

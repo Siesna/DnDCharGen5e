@@ -1,3 +1,4 @@
 class Ability < ActiveRecord::Base
-  # belongs_to :character
+  has_one :saving_throw
+  accepts_nested_attributes_for :saving_throw
 end
