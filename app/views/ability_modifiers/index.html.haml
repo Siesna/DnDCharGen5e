@@ -1,0 +1,33 @@
+%h1 Listing ability_modifiers
+
+%table
+  %thead
+    %tr
+      %th Strength
+      %th Dexterity
+      %th Constitution
+      %th Intelligence
+      %th Wisdom
+      %th Charisma
+      %th Ability
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @ability_modifiers.each do |ability_modifier|
+      %tr
+        %td= ability_modifier.strength
+        %td= ability_modifier.dexterity
+        %td= ability_modifier.constitution
+        %td= ability_modifier.intelligence
+        %td= ability_modifier.wisdom
+        %td= ability_modifier.charisma
+        %td= ability_modifier.ability
+        %td= link_to 'Show', ability_modifier
+        %td= link_to 'Edit', edit_ability_modifier_path(ability_modifier)
+        %td= link_to 'Destroy', ability_modifier, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Ability modifier', new_ability_modifier_path

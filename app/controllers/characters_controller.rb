@@ -78,6 +78,8 @@ class CharactersController < ApplicationController
                     :experience, :level, :speed, :proficiency_bonus, :max_hp, :max_hp, :armor_class, 
                     :hit_die, :total_hit_die, :languages, ability_attributes: [:id, :strength, :dexterity, 
                     :constitution, :intelligence, :wisdom, :charisma, saving_throw_attributes: [:id, 
-                    :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma]])
+                    :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma], 
+                    ability_modifier_attributes: [:id, :strength, :dexterity, :constitution, 
+                    :intelligence, :wisdom, :charisma]])
     end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ability_modifiers
+
   resources :skills
 
   resources :saving_throws

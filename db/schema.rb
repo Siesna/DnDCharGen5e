@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119203959) do
+ActiveRecord::Schema.define(version: 20150124221537) do
 
   create_table "abilities", force: true do |t|
     t.integer  "strength"
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(version: 20150119203959) do
   end
 
   add_index "abilities", ["character_id"], name: "index_abilities_on_character_id"
+
+  create_table "ability_modifiers", force: true do |t|
+    t.integer  "strength"
+    t.integer  "dexterity"
+    t.integer  "constitution"
+    t.integer  "intelligence"
+    t.integer  "wisdom"
+    t.integer  "charisma"
+    t.integer  "ability_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ability_modifiers", ["ability_id"], name: "index_ability_modifiers_on_ability_id"
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
