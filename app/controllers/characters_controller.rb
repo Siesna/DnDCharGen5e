@@ -18,6 +18,7 @@ class CharactersController < ApplicationController
     @character.build_ability
     @character.ability.build_saving_throw
     @character.ability.build_ability_modifier
+    @character.ability.build_skill
   end
 
   # GET /characters/1/edit
@@ -26,6 +27,7 @@ class CharactersController < ApplicationController
     @character.build_ability if @character.ability.nil?
     @character.ability.build_saving_throw if @character.ability.saving_throw.nil?
     @character.ability.build_ability_modifier if @character.ability.ability_modifier.nil?
+    @character.ability.build_skill if @character.ability.skill.nil?
   end
 
   # POST /characters
@@ -82,6 +84,9 @@ class CharactersController < ApplicationController
                     :constitution, :intelligence, :wisdom, :charisma, saving_throw_attributes: [:id, 
                     :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma], 
                     ability_modifier_attributes: [:id, :strength, :dexterity, :constitution, 
-                    :intelligence, :wisdom, :charisma]])
+                    :intelligence, :wisdom, :charisma], skill_attributes: [:id, :acrobatics, 
+                    :animal_handling, :arcana, :athletics, :deception, :history, :insight, :intimidation, 
+                    :investigation, :medicine, :nature, :perception, :perception, :performance, :persuasion, 
+                    :religion, :sleight_of_hand, :stealth, :survival]])
     end
 end

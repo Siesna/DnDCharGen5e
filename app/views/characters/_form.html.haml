@@ -58,6 +58,15 @@
   = f.fields_for :ability, @character.ability do |a|
     =a.fields_for :saving_throw, @character.ability.saving_throw do |st|
       =a.fields_for :ability_modifier, @character.ability.ability_modifier do |am|
+        .col-md-2
+        .col-md-2
+          %h3 Ability Scores
+        .col-md-2
+        .col-md-2
+          %h3 Ability Modifiers
+        .col-md-2
+        .col-md-2
+          %h3 Saving Throws
         .form-group.strength
           = a.label :strength, class: "col-md-2 control-label"
           .col-md-2
@@ -118,5 +127,70 @@
           = st.label :charisma, "Cha Saving Throw", class: "col-md-2 control-label"
           .col-md-2
             = st.number_field :charisma, class: "form-control"
+    =a.fields_for :skill, @character.ability.skill do |s|
+      .col-md-1
+      .col-md-11
+        %h3 Skills
+        %br
+      .form-group
+        = s.label :acrobatics, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :acrobatics, class: "form-control"
+        = s.label :insight, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :insight, class: "form-control"
+        = s.label :performance, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :performance, class: "form-control"
+      .form-group
+        = s.label :animal_handling, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :animal_handling, class: "form-control"
+        = s.label :intimidation, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :intimidation, class: "form-control"
+        = s.label :persuasion, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :persuasion, class: "form-control"
+      .form-group
+        = s.label :arcana, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :arcana, class: "form-control"
+        = s.label :investigation, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :investigation, class: "form-control"
+        = s.label :religion, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :religion, class: "form-control"
+      .form-group
+        = s.label :athletics, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :athletics, class: "form-control"
+        = s.label :medicine, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :medicine, class: "form-control"
+        = s.label :sleight_of_hand, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :sleight_of_hand, class: "form-control"
+      .form-group
+        = s.label :deception, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :deception, class: "form-control"
+        = s.label :nature, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :nature, class: "form-control"
+        = s.label :stealth, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :stealth, class: "form-control"
+      .form-group
+        = s.label :history, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :history, class: "form-control"
+        = s.label :perception, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :perception, class: "form-control"
+        = s.label :survival, class: "col-md-2 control-label"
+        .col-md-2
+          = s.number_field :survival, class: "form-control"
   .col-md-2
     = f.submit 'Save', class: "btn btn-primary"
