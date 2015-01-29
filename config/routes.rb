@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   resources :abilities
 
-  resources :meats
-
   authenticated :user do
     root :to => 'characters#index', :as => :authenticated_root
   end
