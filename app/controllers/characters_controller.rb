@@ -10,6 +10,9 @@ class CharactersController < ApplicationController
   # GET /characters/1
   # GET /characters/1.json
   def show
+    @ability = @character.ability
+    @saving_throw = @character.ability.saving_throw
+    @skill = @character.ability.skill
   end
 
   # GET /characters/new
